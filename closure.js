@@ -1,13 +1,13 @@
-const add = (function () {
-    let counter = 0;
-    return function () {
-        counter += 1;
+function createCounter() {
+    let counter = 0
+    const myFunction = function () {
+        counter = counter + 1
         return counter
     }
-})();
-
-add();
-add();
-add();
-
-// the counter is now 3
+    return myFunction
+}
+const increment = createCounter()
+const c1 = increment()
+const c2 = increment()
+const c3 = increment()
+console.log('example increment', c1, c2, c3)
