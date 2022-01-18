@@ -74,3 +74,4 @@ speed.addRating(1);
 speed.addRating(1);
 speed.addRating(5);
 console.log(speed.getAverageRating());
+console.log(Object.getPrototypeOf(speed));
