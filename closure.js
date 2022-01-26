@@ -1,9 +1,11 @@
-let c = 4
-function addX(x) {
-  return function(n) {
-     return n + x
+let val = 7
+function createAdder() {
+  function addNumbers(a, b) {
+    let ret = a + b
+    return ret
   }
+  return addNumbers
 }
-const addThree = addX(3)
-let d = addThree(c)
-console.log('example partial application', d)
+let adder = createAdder()
+let sum = adder(val, 8)
+console.log('example of function returning a function: ', sum)
