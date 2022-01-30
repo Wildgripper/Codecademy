@@ -1,9 +1,8 @@
-let c = 4
-function addX(x) {
-  return function (n) {
-    return n + x
-  }
-}
-const addThree = addX(3)
-let d = addThree(c)
-console.log('example partial application', d)
+const add = (function () {
+  let counter = 0;
+  return function () {counter += 1; return counter}
+})();
+
+add();
+add();
+add();
