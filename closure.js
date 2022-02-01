@@ -1,8 +1,13 @@
-const add = (function () {
-  let counter = 0;
-  return function () {counter += 1; return counter}
-})();
+function tabsHandler(index) {
+  return function tabClickEvent(evt) {
+    // Do stuff with tab.
+    // The index variable can be accessed from within here.
+  };
+}
 
-add();
-add();
-add();
+var tabs = document.querySelectorAll('.tab'),
+  i;
+
+for (i = 0; i < tabs.length; i += 1) {
+  tabs[i].onclick = tabsHandler(i);
+}
