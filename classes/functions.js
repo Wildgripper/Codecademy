@@ -1,22 +1,9 @@
-const sum = function (a, b) {
-    return a + b;
-};
+var hoisted = "foo" in this;
 
-function myFunction (a, b) {
-    return sum(a, b);
-}
+console.log(`'foo' name ${hoisted ? "is" : "is not"} hoisted. typeof foo is ${typeof foo}`);
 
-// let x = myFunction(5, 10);
-// console.log(x);
-
-let number = 0;
-
-const add = function(num) {
-    for (let index = 0; index <= num; index++) {
-        number = number + index;        
+if (false) {
+    function foo() {
+        return 1;
     }
-    console.log(number);
 }
-
-add(5);
-add(5);
