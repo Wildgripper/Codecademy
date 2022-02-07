@@ -1,5 +1,14 @@
-const number = [1, 2, 3, 4, 5];
+const car = {
+    make: 'Honda',
+    model: 'Accord',
+    year: 1998
+};
 
-console.log(number instanceof Object);
-console.log(5 in number);
+console.log('make' in car);
 
+delete car.make;
+if ('make' in car === false) {
+    car.make = 'Suzuki';
+}
+
+console.log(car.make);
