@@ -1,5 +1,12 @@
-let color1 = new String('green')
-'length' in color1
+let mycar = {
+    make: 'Honda',
+    model: 'Accord',
+    year: 1998
+}
 
-let color2 = 'coral'
-'length' in color2
+delete mycar.make;
+'make' in mycar;
+
+let trees = new Array('redwood', 'bay', 'cedar', 'oak', 'maple')
+delete trees[3];
+3 in trees;
