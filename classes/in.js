@@ -4,9 +4,10 @@ let mycar = {
     year: 1998
 }
 
-delete mycar.make;
+mycar.make = undefined;
 'make' in mycar;
 
 let trees = new Array('redwood', 'bay', 'cedar', 'oak', 'maple')
-delete trees[3];
+
+trees[3] = undefined;
 3 in trees;
