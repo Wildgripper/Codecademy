@@ -1,13 +1,12 @@
-let mycar = {
-    make: 'Honda',
-    model: 'Accord',
-    year: 1998
+class ClassWithPrivateFeatures {
+    #a;
+    #b = null;
+    #c() {}
+    get #d() {}
+    static f(o) {
+        return #a in o && #b in o && #c in o && #d in o;
+    }
 }
 
-mycar.make = undefined;
-'make' in mycar;
-
-let trees = new Array('redwood', 'bay', 'cedar', 'oak', 'maple')
-
-trees[3] = undefined;
-3 in trees;
+ClassWithPrivateFeatures.f(new ClassWithPrivateFeatures()) // returns true
+ClassWithPrivateFeatures.f({}) // returns false  
