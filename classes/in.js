@@ -1,12 +1,15 @@
-class ClassWithPrivateFeatures {
-    #a;
-    #b = null;
-    #c() {}
-    get #d() {}
-    static f(o) {
-        return #a in o && #b in o && #c in o && #d in o;
-    }
+const car = {
+    make: 'Honda',
+    model: 'Accord',
+    year: 1998
+};
+
+console.log('make' in car);
+
+delete car.make;
+
+if ('make' in car === false) {
+    car.make = 'Suzuki';
 }
 
-ClassWithPrivateFeatures.f(new ClassWithPrivateFeatures()) // returns true
-ClassWithPrivateFeatures.f({}) // returns false  
+console.log(car.make);
