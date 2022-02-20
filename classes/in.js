@@ -1,6 +1,12 @@
-let trees = ['redwood', 'bay', 'cedar', 'oak', 'maple'];
-trees[3] = undefined;
-
-console.log(trees);
-console.log(3 in trees);
-console.log('toString' in {});
+class ClassWithPrivateFeatures {
+    #a;
+    #b = null;
+    #c() {}
+    get #d() {}
+    static f(o) {
+      return #a in o && #b in o && #c in o && #d in o;
+    }
+  }
+  
+  ClassWithPrivateFeatures.f(new ClassWithPrivateFeatures()) // returns true
+  ClassWithPrivateFeatures.f({}) // returns false  
